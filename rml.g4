@@ -1,13 +1,8 @@
 
 
-eventExp: '{' (field (',' field)*)? '}' # objectEventExp
-        | '(' eventExp ')' # parenEventExp
-        | listEventExp: '[' ']' # emptyList
-                      | '[' ELLIPSIS ']' # ellipsisList
-                      | '[' eventExp (',' eventExp)* (',' ELLIPSIS)? ']' # nonEmptyList
-                      ;
-        
-
-
-            
-            field: fieldKey ':' eventExp ;
+eventExp: eventExp ('|' eventExp) # patternEventExp
+        | '{' (field (',' field)*)? '}' # objectEventExp
+        .
+        .
+        .
+field: fieldKey ':' eventExp ;
