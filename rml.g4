@@ -60,6 +60,8 @@ exp: exp '*' # starExp
 
 exp:
    .
+   | EMPTY # emptyExp
+   | ALL # allExp
    .
    | expId ('<' dataExp (',' dataExp)* '>')? # varExp
    | evtype # evtypeExp
