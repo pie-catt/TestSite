@@ -61,8 +61,8 @@ exp: exp '*' # starExp
 exp:
    .
    .
-   | '{' DEC evtypeVar (',' evtypeVar)* ';' exp '}' # blockExp
-   | IF '(' dataExp ')' exp ELSE exp # ifElseExp
+   | expId ('<' dataExp (',' dataExp)* '>')? # varExp
+   | evtype # evtypeExp
    .
    .
    ;
