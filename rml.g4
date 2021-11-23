@@ -68,3 +68,16 @@ exp:
    .
    .
    ;
+
+exp: exp '*' # starExp
+   | exp '+' # plusExp
+   | exp '?' # optionalExp
+   | exp '!' # closureExp
+   | exp '/\\' exp # andExp
+   | exp '\\/' exp # orExp
+   | exp '|' exp # shufExp
+   | evtype '>>' leftBranch=exp (':' rightBranch=exp)? # filterExp
+   .
+   .
+   | '(' exp ')' # parenExp
+   ;
