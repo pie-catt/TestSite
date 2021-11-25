@@ -35,6 +35,9 @@ listEventExp: '[' ']' # emptyList
             | '[' ELLIPSIS ']' # ellipsisList
             | '[' eventExp (',' eventExp)* (',' ELLIPSIS)? ']' # nonEmptyList
             
+            
+            .....( eventExp ).....
+            
             ;
             
             
